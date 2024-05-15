@@ -1,10 +1,30 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="sign_up">SIGN UP</string>
+    <string name="app_name">Learn. Grow. Repeat</string>
+    <string name="lable">The more you learn, the less you judge.</string>
+    <string name="sign_up">WELCOME TO KNOWLEDGE</string>
     <string name="enter_email">ENTER EMAIL</string>
     <string name="email_address">EMAIL ADDRESS</string>
     <string name="enter_password">ENTER PASSWORD</string>
     <string name="password">PASSWORD</string>
     <string name="sign_in">SIGN IN</string>
     <string name="create_account">CREATE ACCOUNT</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="password_hidden">password hidden \n</string>
+    <string name="name">NAME\n</string>
+    <string name="edit_name">edit name \n</string>
+    <string name="clear_name">clear name</string>
+    <string name="email">EMAIL</string>
+    <string name="edit_email">edit email</string>
+    <string name="clear_email">clear email</string>
+    <string name="old_password">old password\n</string>
+    <string name="new_password">new password\n</string>
+    <string name="confirm_password">"confirm password "</string>
+    <string name="log_out">"log out "</string>
+    <string name="delete_account">delete account \n</string>
+    <string name="change_password">"change password "</string>
+    <string name="clear_old_password">"clear old password "</string>
+    <string name="clear_new_password">"clear new password "</string>
+    <string name="confirm_new_password">confirm new password</string>
+    <string name="clear_confirm_new_password">"clear confirm new password "</string>
+    <string name="delete_account_sure">❌❌❌❌❌❌❌❌❌❌❌❌    Account will be deleted</string>
 </resources>

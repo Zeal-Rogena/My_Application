@@ -5,72 +5,54 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_4"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity4">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:src="@drawable/studying" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/blue"
-        android:padding="8dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Quiz App"
-            android:gravity="center"
-            android:textSize="34sp"
-            android:letterSpacing="0.1"
-            android:textColor="@color/white"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lets play this awesome quiz app to enhance your knowledge"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:layout_margin="16dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"/>
-
-
-    </LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="241dp"
+        android:src="@drawable/pngtreedevelopers_are_coding_programs_on_14867886" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="All items"
-        android:layout_marginTop="16dp"
+        android:layout_width="113dp"
+        android:layout_height="28dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:text="Key Topics"
+        android:textColor="@color/aestheticBlue"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="389dp"
+        android:layout_height="339dp">
+
         <ProgressBar
+            android:id="@+id/progress_bar"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:id="@+id/progress_bar"/>
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:id="@+id/recycler_view"/>
+            android:id="@+id/recycler_view"
+            android:layout_width="353dp"
+            android:layout_height="match_parent" />
+
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif"
+        android:text="Profile" />
 
 </LinearLayout>

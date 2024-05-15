@@ -1,18 +1,22 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.input.key.Key.Companion.Home
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivityMain3Binding
 import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity4 : AppCompatActivity() {
     private lateinit var binding: ActivityMain3Binding
-    private lateinit var quizModelList : MutableList<QuizModel>
+    private lateinit var quizModelList: MutableList<QuizModel>
     private lateinit var adapter: QuizListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,27 +29,32 @@ class MainActivity4 : AppCompatActivity() {
         }
         binding = ActivityMain3Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
         quizModelList = mutableListOf()
         getDataFromFirebase()
 
+        binding.button.setOnClickListener{
+            val jay = Intent(this@MainActivity4, MainActivity::class.java)
+            startActivity(jay)
+            finish()
+        }
 
     }
 
-    private fun setupRecyclerView(){
+
+    private fun setupRecyclerView() {
         binding.progressBar.visibility = View.GONE
         adapter = QuizListAdapter(quizModelList)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
     }
 
-    private fun getDataFromFirebase(){
+    private fun getDataFromFirebase() {
         binding.progressBar.visibility = View.VISIBLE
         FirebaseDatabase.getInstance().reference
             .get()
-            .addOnSuccessListener { dataSnapshot->
-                if(dataSnapshot.exists()){
-                    for (snapshot in dataSnapshot.children){
+            .addOnSuccessListener { dataSnapshot ->
+                if (dataSnapshot.exists()) {
+                    for (snapshot in dataSnapshot.children) {
                         val quizModel = snapshot.getValue(QuizModel::class.java)
                         if (quizModel != null) {
                             quizModelList.add(quizModel)
@@ -54,8 +63,7 @@ class MainActivity4 : AppCompatActivity() {
                 }
                 setupRecyclerView()
             }
-
-
     }
 }
+
 

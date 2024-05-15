@@ -98,6 +98,13 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             btn3.setBackgroundColor(getColor(R.color.gray))
         }
 
+        binding.apply {
+            btn0.setBackgroundResource(R.drawable.rounded_corner);
+            btn1.setBackgroundResource(R.drawable.rounded_corner);
+            btn2.setBackgroundResource(R.drawable.rounded_corner);
+            btn3.setBackgroundResource(R.drawable.rounded_corner);
+        }
+
         val clickedBtn = view as Button
         if(clickedBtn.id==R.id.next_btn){
             //next button is clicked
@@ -115,22 +122,33 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             //options button is clicked
             selectedAnswer = clickedBtn.text.toString()
             clickedBtn.setBackgroundColor(getColor(R.color.orange))
+
+            binding.apply {
+                btn0.setBackgroundResource(R.drawable.rounded_corner);
+                btn1.setBackgroundResource(R.drawable.rounded_corner);
+                btn2.setBackgroundResource(R.drawable.rounded_corner);
+                btn3.setBackgroundResource(R.drawable.rounded_corner);
+            }
+
+            binding.apply {
+                clickedBtn.setBackgroundColor(getColor(R.color.orange));
+            }
         }
     }
 
     @SuppressLint("SetTextI18n")
-    private fun finishQuiz(){
+    private fun finishQuiz() {
         val totalQuestions = questionModelList.size
-        val percentage = ((score.toFloat() / totalQuestions.toFloat() ) *100 ).toInt()
+        val percentage = ((score.toFloat() / totalQuestions.toFloat()) * 100).toInt()
 
-        val dialogBinding  = ScoreDialogBinding.inflate(layoutInflater)
+        val dialogBinding = ScoreDialogBinding.inflate(layoutInflater)
         dialogBinding.apply {
             scoreProgressIndicator.progress = percentage
             scoreProgressText.text = "$percentage %"
-            if(percentage>60){
+            if (percentage > 60) {
                 scoreTitle.text = "Congrats! You have passed"
                 scoreTitle.setTextColor(Color.BLUE)
-            }else{
+            } else {
                 scoreTitle.text = "Oops! You have failed"
                 scoreTitle.setTextColor(Color.RED)
             }

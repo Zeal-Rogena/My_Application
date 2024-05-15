@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ class QuizListAdapter(private val quizModelList : List<QuizModel>) :
     RecyclerView.Adapter<QuizListAdapter.MyViewHolder>() {
 
     class MyViewHolder(private val binding: QuizItemRecyclerRowBinding) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(model : QuizModel){
             binding.apply {
                 quizTitleText.text = model.title
